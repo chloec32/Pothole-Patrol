@@ -17,10 +17,14 @@ int hour = time.getHour();
 // print result 
 System.out.println("Hour Field: " + hour); 
 
-if ( hour == 6) {
+if ( hour == 6 ) {
   // 6AM, Send workorders to MaintenanceDepartment
 
-  
+}
+
+if ( hour == 20 ) {
+  // 8PM, send workorder updates to PotholeReportingSystem
+
 }
 
 
