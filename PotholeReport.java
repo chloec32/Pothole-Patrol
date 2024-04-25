@@ -1,23 +1,20 @@
 import java.util.Scanner;
 
 public class PotholeReport {
-    private static int lastCitizenReportID = 0;
-    private int citizenReportID;
-    private String phAddress;
-    private int phSize;
+    //private static int lastCitizenReportID = 0;
+    //private int citizenReportID;
+    // Changing citizenReportID to a general pothole ID based on the date, just gonna hardcode it for this sprint
+    private int ReportID = 20240425001
     private String phStreetLocation;
+    private String phAddress;
     private String phRepairType;
-    private int phPriority;
-    private String phStatus;
-
+    private int phSize;
+    
     // Constructor
     public PotholeReport() {
-        this.citizenReportID = ++lastCitizenReportID;
+        //this.citizenReportID = ++lastCitizenReportID;
 		inputReportDetails();
-		// Priority calculation based on size and location
-		this.phPriority = calculatePriority(phSize, phStreetLocation);
-		this.phStatus = "Reported"; // Initially set status to "Reported"
-	}
+    }
 
 	// Method to input report details from user
 	private void inputReportDetails() {
@@ -27,27 +24,16 @@ public class PotholeReport {
 		System.out.println("Enter Pothole Size (on a scale of 1 to 10): ");
 		this.phSize = scanner.nextInt();
 		scanner.nextLine(); // Consume newline character
-		System.out.println("Enter Pothole Street Location: ");
+		System.out.println("Enter Pothole Street Location (Middle, Left Right, Curb, Turnlane): ");
 		this.phStreetLocation = scanner.nextLine();
 		System.out.println("Enter Pothole Repair Type (asphalt, concrete, unknown): ");
 		this.phRepairType = scanner.nextLine();
 	}
 
-	// Method to calculate repair priority
-	private int calculatePriority(int size, String location) {
-		// Calculation for priority
-		int priority = size * 2; // basic calculation
-		return priority;
-	}
-
-	// Method to update status
-	public void updateStatus(String status) {
-		this.phStatus = status;
-	}
 
 	// Other getter methods
-	public int getCitizenReportID() {
-		return citizenReportID;
+	public int getReportID() {
+		return ReportID;
 	}
 
 	public String getPhAddress() {
@@ -66,13 +52,6 @@ public class PotholeReport {
 		return phRepairType;
 	}
 
-	public int getPhPriority() {
-		return phPriority;
-	}
-
-	public String getPhStatus() {
-		return phStatus;
-	}
 
 	// Main method for testing
     public static void main(String[] args) {
