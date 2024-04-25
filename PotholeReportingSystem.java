@@ -6,3 +6,9 @@
 
 
 import PotholeReport;
+
+
+public static void main(String[] args) {
+  //beep boop
+  
+}
