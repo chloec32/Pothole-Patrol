@@ -9,13 +9,19 @@ import WorkOrder;
 import java.time.*;
 
 // Create a variable for the current time.
-LocalTime time = LocalTime.now(); 
+LocalTime time = LocalTime.now(ZoneId.of("America/New_York"); 
   
 // get Hour field using getHour() 
-int Hour = time.getHour(); 
+int hour = time.getHour(); 
   
 // print result 
-System.out.println("Hour Field: " + Hour); 
+System.out.println("Hour Field: " + hour); 
+
+if ( hour == 6) {
+  // 6AM, Send workorders to MaintenanceDepartment
+
+  
+}
 
 
 
