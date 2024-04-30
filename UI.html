@@ -12,26 +12,18 @@
             <br>
 		    <div class = "b"> 
                 <br>
-                <label for="StreetName">Street of Pothole: </label>
-                <input type="text" id="StreetName" name="StreetName">
-                    <br>
-                <label for="LocationInStreet">Location in street: </label>
-                <input type="text" id="LocationInStreet" name="LocationInStreet">
-                <div>- (right, left, middle, turnlanes, curbsides) </div>
-                <br>
-                <label for="PoteholeSize">Size of Pothole: </label>
-                <input type="text" id="PoteholeSize" name="PoteholeSize">
-                 <div>- (scale of 1-10)</div>
-                  <br>
-                
-                  <label for="RepairType">Type of Repair Needed: </label>
-                  <input type="text" id="RepairType" name="RepairType"> 
-                  <br> <div>  - (ashpalt, concrete, unknown) </div>
-
+                <form id="myForm" action="PotholeReport.js">
+                    Street of Pothole: <br> <input type="text" name = "streetInput" id="streetInput"><br>
+                    Location in Street: <br> <input type="text" name = "locationInput" id = "locationInput"><br>
+                    (right, left, middle, turnlanes, curbsides) <br> <br>
+                    Size of Pothole: <br> <input type="text" name = "PotholeSize" id = "PoteholeSize"><br>
+                    - (scale of 1-10) <br><br>
+                    Type of Repair Needed: <br> <input type="text" name = "surfaceInput" id = "surfaceInput"><br><br>
+                    <input type="button" alue="Submit Report" onclick="submitReport()" value="Submit form">
+                  </form>
+                  
             </div>
             <br>
-            <input type="submit" value="Submit Report" onclick="submitReport()">
 
-              
 	</body>
 </html>
