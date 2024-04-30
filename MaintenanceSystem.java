@@ -13,9 +13,9 @@ LocalTime time = LocalTime.now(ZoneId.of("America/New_York");
   
 // get Hour field using getHour() 
 int hour = time.getHour(); 
-  
-// print result 
-System.out.println("Hour Field: " + hour); 
+
+// Gather active work orders by priority
+
 
 if ( hour == 6 ) {
   // 6AM, Send workorders to MaintenanceDepartment
