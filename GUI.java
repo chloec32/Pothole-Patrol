@@ -2,18 +2,15 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.MessageDigest;
 
+import javax.crypto.spec.OAEPParameterSpec;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import org.w3c.dom.Text;
-
+import Prog7.PotholeReport;
 public class GUI implements ActionListener {
 	JFrame frame = new JFrame();
     JTextField text1 = new JTextField(20);
@@ -22,18 +19,17 @@ public class GUI implements ActionListener {
     JTextField text4 = new JTextField(20);
 
     JButton button = new JButton("Submit"); //Changes the button text
-    JLabel message1 = new JLabel("Street of Pothole:");
+    JLabel message1 = new JLabel("Address of Pothole:");
     JLabel message2 = new JLabel("Location in Street:");
     JLabel message3 = new JLabel("Size of Pothole:");
     JLabel message4 = new JLabel("Type of Repair Needed:");
-JLabel messagetest = new JLabel("1");
+    JLabel messagetest = new JLabel("1");
     JPanel panel = new JPanel();
-    String streetLocation;
-    String streetName;
-    String size;
-    String repairType;
+    String phAddress;
+    String phStreetLocation;
+    Integer phSize;
+    String phRepairType;
     public static void main(String[] args) {
-        new GUI();
         
     }
 
@@ -70,10 +66,17 @@ JLabel messagetest = new JLabel("1");
     public void actionPerformed(ActionEvent e) {
     	if (e.getSource() == button)
 		{ 
-    		streetLocation = text1.getText();
-    		streetName = text2.getText();
-    		size = text3.getText();
-    		repairType = text4.getText();
+    		PotholeReport.setPhAddress(text1.getText());
+    		PotholeReport.setPhStreetLocation(text2.getText());
+    		PotholeReport.setPhSize(Integer.parseInt(text3.getText()));
+    		PotholeReport.setPhRepairType(text4.getText());
+    		
+    		System.out.println("\nPothole Report Details:");
+            System.out.println("Citizen Report ID: " + PotholeReport.getReportID());
+            System.out.println("Address: " + PotholeReport.getPhAddress());
+            System.out.println("Street Location: " + PotholeReport.getPhStreetLocation());
+            System.out.println("Size: " + PotholeReport.getPhSize());
+            System.out.println("Repair Type: " + PotholeReport.getPhRepairType());
     		
 		}
     	else if (e.getSource()== button)
@@ -82,4 +85,7 @@ JLabel messagetest = new JLabel("1");
 		} 
 			
     }
+
+	
 }
+
