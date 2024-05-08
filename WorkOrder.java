@@ -1,4 +1,6 @@
+package PHTRS;
 import java.util.Scanner;
+
 
 public class WorkOrder{
 	private int ReportID;
@@ -13,23 +15,24 @@ public class WorkOrder{
 	Scanner scanner = new Scanner(System.in);
 	  
 	public WorkOrder(PotholeReport phReport) {
-		this.ReportID = phReport.ReportID
-		this.StreetLoc = phReport.StreetLoc
-		this.Address = phReport.Address
-		this.RepType = phReport.RepType
-		this.Size = phReport.Size
+		this.ReportID = phReport.getReportID();
+		this.StreetLoc = phReport.getStreetLoc();
+		this.Address = phReport.getAddress();
+		this.RepType = phReport.getRepType();
+		this.Size = phReport.getSize();
 
 		// Priority calculation based on size and location
 		this.RepPriority = calculatePriority(Size);
 		updateRepairTime();
-		RepairStatus = "Not Started" // Defaulted to not started 
+		RepairStatus = "Not Started"; // Defaulted to not started 
 	}
 
-	public updateRepairTime() {
+	public void updateRepairTime() {
 		System.out.println("Enter Repair Time: ");
-		this.EstRepairTime = scanner.nextLine();
+		this.EstRepairTime = scanner.nextInt();
+		return;
 	}
-	public updateStatus() {
+	public void updateStatus() {
 		System.out.println("Enter Pothole Status (Not Started, In-Progress, Fixed): ");
 		this.RepairStatus = scanner.nextLine();
 	}
@@ -41,21 +44,18 @@ public class WorkOrder{
 		return priority;
 	}
 	
-	public getRepPriority(){
+	public int getRepPriority(){
 		return RepPriority;
 	}
 	
-	public getEstRepairTime(){
+	public int getEstRepairTime(){
 		return EstRepairTime;
 	}
 	
-	public getRepairStatus(){
+	public String getRepairStatus(){
 		return RepairStatus;
 	}
 
 	
   
 }  
-
-
-    
