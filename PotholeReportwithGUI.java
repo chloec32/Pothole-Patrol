@@ -1,21 +1,22 @@
+package PHTRS;
 import java.sql.*;
 import java.util.Scanner;
 
 
 public class PotholeReport {
     private static int lastReportID;
-    private static int reportID;
-    private static String phStreetLocation;
-    private static String phAddress;
-    private static int phSize;
-    private static String phRepairType;
+    private static int ReportID;
+    private static String StreetLoc;
+    private static String Address;
+    private static int Size;
+    private static String RepType;
 
     // Constructor
     public PotholeReport() {
     	if (lastReportID == 0) {
             lastReportID = getLastReportIDFromDatabase();
         }
-        this.reportID = ++lastReportID;
+        this.ReportID = ++lastReportID;
         new GUI();
         // Store the report into the database
         storeReport();
@@ -51,40 +52,40 @@ public class PotholeReport {
 
 	// Other getter methods
 	public static int getReportID() {
-		return reportID;
+		return ReportID;
 	}
 
-	public static String getPhAddress() {
-		return phAddress;
+	public static String getAddress() {
+		return Address;
 	}
 
-	public static int getPhSize() {
-		return phSize;
+	public static int getSize() {
+		return Size;
 	}
 
-	public static String getPhStreetLocation() {
-		return phStreetLocation;
+	public static String getStreetLoc() {
+		return StreetLoc;
 	}
 
-	public static String getPhRepairType() {
-		return phRepairType;
+	public static String getRepType() {
+		return RepType;
 	}
 
 
 	public static void setPhAddress(String i) {
-		phAddress = i;
+		Address = i;
 	}
 
 	public static void setPhSize(int i) {
-		phSize = i;
+		Size = i;
 	}
 
 	public static void setPhStreetLocation(String i) {
-		phStreetLocation = i;
+		StreetLoc = i;
 	}
 
 	public static void setPhRepairType(String i) {
-		phRepairType = i;
+		RepType = i;
 	}
 
     // Method to store report into the database
@@ -101,11 +102,11 @@ public class PotholeReport {
              PreparedStatement preparedStatement = connection.prepareStatement(insertSQL)) {
 
             // Set parameters for the prepared statement
-            preparedStatement.setInt(1, reportID);
-            preparedStatement.setString(2, phStreetLocation);
-            preparedStatement.setString(3, phAddress);
-            preparedStatement.setString(4, phRepairType);
-            preparedStatement.setInt(5, phSize);
+            preparedStatement.setInt(1, ReportID);
+            preparedStatement.setString(2, StreetLoc);
+            preparedStatement.setString(3, Address);
+            preparedStatement.setString(4, RepType);
+            preparedStatement.setInt(5, Size);
 
             // Execute the query
             preparedStatement.executeUpdate();
