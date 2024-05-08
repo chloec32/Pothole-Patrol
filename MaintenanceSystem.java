@@ -4,12 +4,11 @@
 // Sends WorkOrders to MaintenanceDepartment
 // Receives Updated WorkOrders from MaintenanceDepartment
 // Sends WorkOrder Updates to PotholeReportingSystem
-
-import WorkOrder;
+package PHTRS;
 import java.time.*;
 
 // Create a variable for the current time.
-LocalTime time = LocalTime.now(ZoneId.of("America/New_York"); 
+LocalTime time = LocalTime.now(ZoneId.of("America/New_York")); 
   
 // get Hour field using getHour() 
 int hour = time.getHour(); 
