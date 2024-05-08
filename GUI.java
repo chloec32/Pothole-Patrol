@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import Prog7.PotholeReport;
+
 public class GUI implements ActionListener {
 	JFrame frame = new JFrame();
     JTextField text1 = new JTextField(20);
@@ -20,9 +20,9 @@ public class GUI implements ActionListener {
 
     JButton button = new JButton("Submit"); //Changes the button text
     JLabel message1 = new JLabel("Address of Pothole:");
-    JLabel message2 = new JLabel("Location in Street:");
-    JLabel message3 = new JLabel("Size of Pothole:");
-    JLabel message4 = new JLabel("Type of Repair Needed:");
+    JLabel message2 = new JLabel("<html>Location in Street:<br/>(Left,Right,Center)</html>");
+    JLabel message3 = new JLabel("<html>Size of Pothole:<br>(1-10):</html>");
+    JLabel message4 = new JLabel("<html>Type of Repair Needed:<br>(Asphalt,Concrete,etc)</html>");
     JLabel messagetest = new JLabel("1");
     JPanel panel = new JPanel();
     String phAddress;
@@ -88,4 +88,3 @@ public class GUI implements ActionListener {
 
 	
 }
-
