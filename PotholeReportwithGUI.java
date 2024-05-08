@@ -1,6 +1,6 @@
 import java.sql.*;
 import java.util.Scanner;
-import Prog7.GUI;
+
 
 public class PotholeReport {
     private static int lastReportID;
