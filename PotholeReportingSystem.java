@@ -5,7 +5,7 @@
 // Displays Potholes for Citizens and Public Works Director
 
 
-import PotholeReport;
+package PHTRS;
 
 
 public static void main(String[] args) {
